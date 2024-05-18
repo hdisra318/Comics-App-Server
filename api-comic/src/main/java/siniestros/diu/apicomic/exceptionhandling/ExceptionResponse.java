@@ -44,42 +44,82 @@ public class ExceptionResponse {
 		this.path = path;
 	}
 
+	/**
+	 * Metodo que retorna el timestamp
+	 * @return El time stamp
+	 */
 	public LocalDateTime getTimeStamp() {
 		return timeStamp;
 	}
-
-	public void setTimeStamp(LocalDateTime timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
+	
+	/**
+	 * Metodo que obtiene el status
+	 * @return El status
+	 */
 	public Integer getStatus() {
 		return status;
 	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
+	
+	/**
+	 * Metodo que retorna el error
+	 * @return El error
+	 */
 	public HttpStatus getError() {
 		return error;
 	}
 
+	/**
+	 * Metodo que retorna el menssage
+	 * @return El mensaje
+	 */
+	public String getMessage() {
+		return message;
+	}
+	
+	/**
+	 * Metodo que obtiene el path
+	 * @return El path
+	 */
+	public String getPath() {
+		return path;
+	}
+	
+	/**
+	 * Metodo que asigna nuevo time stamp
+	 * @param timeStamp El nuevo time stamp
+	 */
+	public void setTimeStamp(LocalDateTime timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+	
+	/**
+	 * Metodo que asigna un nuevo status
+	 * @param status El nuevo status
+	 */
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	/**
+	 * Metodo que asigna un nuevo error
+	 * @param error El nuevo error
+	 */
 	public void setError(HttpStatus error) {
 		this.error = error;
 	}
 
-	public String getMessage() {
-		return message;
-	}
-
+	/**
+	 * Metodo que asigna un nuevo mensaje
+	 * @param message El nuevo mensaje
+	 */
 	public void setMessage(String message) {
 		this.message = message;
 	}
 
-	public String getPath() {
-		return path;
-	}
-
+	/**
+	 * Metodo que asigna un nuevo path
+	 * @param path El nuevo Path
+	 */
 	public void setPath(String path) {
 		this.path = path;
 	}
