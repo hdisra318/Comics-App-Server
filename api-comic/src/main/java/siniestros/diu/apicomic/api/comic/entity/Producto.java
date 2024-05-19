@@ -15,4 +15,5 @@ public class Producto {
 	private String descripcion;
 	private Float precio;
 	private List<Producto> oferta;
+	private List<String> tags;
 }
