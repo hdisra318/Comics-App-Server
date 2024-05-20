@@ -22,23 +22,27 @@ import siniestros.diu.apicomic.exceptionhandling.ApiException;
 @RestController
 @RequestMapping("/producto")
 public class ControllerProducto {
+    public static final String LOG = "ControllerProducto";
 
 	@Autowired
 	ServiceProducto serviceProducto;
 	
 	@GetMapping
 	public ResponseEntity<List<Producto>> getProductos(){
+        final String log = "getProductos";
 		return new ResponseEntity<>(serviceProducto.getProductos(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Producto> getProducto(@PathVariable("id") Integer id){
+        final String log = "getProducto";
 		return new ResponseEntity<>(serviceProducto.getProducto(id),HttpStatus.OK);
 	}
 	
 	@PostMapping
 	public ResponseEntity<HttpStatus> createProducto(@Valid @RequestBody Producto producto, 
 			BindingResult bindingResult){
+		final String log = "createProducto";
 		if(bindingResult.hasErrors()) {
 			throw new ApiException(HttpStatus.BAD_REQUEST,bindingResult.getAllErrors().get(0).getDefaultMessage());
 		}

@@ -18,6 +18,7 @@ import siniestros.diu.apicomic.exceptionhandling.ApiException;
  */
 @Service
 public class ServiceProductoImp implements ServiceProducto {
+    public static final String LOG = "ServiceProductoImp";
 	
 	@Autowired
 	ProductoRepository productoRepository;
@@ -27,6 +28,7 @@ public class ServiceProductoImp implements ServiceProducto {
 
 	@Override
 	public List<Producto> getProductos() {
+        final String log = "getProductos";
 		try {
 			List<Producto> productos = productoRepository.findAll();
 			return productos;
@@ -37,18 +39,21 @@ public class ServiceProductoImp implements ServiceProducto {
 
 	@Override
 	public Producto getProducto(Integer id) {
+        final String log = "getProducto";
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Producto> getProductosByTags(List<String> tags) {
+        final String log = "getProductosByTags";
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void createProducto(Producto producto) {
+        final String log = "createProducto";
 		try {
 			System.out.println("CREATEPRODUCTO "+ producto.toString());
 			productoRepository.save(producto);
@@ -60,6 +65,7 @@ public class ServiceProductoImp implements ServiceProducto {
 
 	@Override
 	public void deleteProducto(Integer id) {
+        final String log = "delateProducto";
 		// TODO Auto-generated method stub
 
 	}
