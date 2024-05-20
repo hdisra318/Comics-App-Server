@@ -1,5 +1,6 @@
 package siniestros.diu.apicomic.api.comic.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,7 @@ public class ControllerProducto {
 		if(bindingResult.hasErrors()) {
 			throw new ApiException(HttpStatus.BAD_REQUEST,bindingResult.getAllErrors().get(0).getDefaultMessage());
 		}
+		producto.setFechaCreacionHOLA(java.sql.Date.valueOf(LocalDateTime.now().toLocalDate()));
 		serviceProducto.createProducto(producto);
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}

@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
  * @version 1.0
  */
 @Data
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Imagen")

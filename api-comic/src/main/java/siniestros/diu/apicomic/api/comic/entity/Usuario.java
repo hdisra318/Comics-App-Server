@@ -1,5 +1,6 @@
 package siniestros.diu.apicomic.api.comic.entity;
 
+import java.sql.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -39,6 +40,11 @@ public class Usuario {
 	@Pattern(regexp = "[a-zA-Z0-9]*", message = "El correo debe tener el formato correcto")
 	private String correo;
 	
+	@JsonProperty("username")
+	@Column(name = "Username")
+	@NotEmpty(message = "Se requiere un usuario")
+	private String username;
+	
 	@JsonProperty("contrasenna")
 	@Column(name = "Contrasenna")
 	@NotEmpty(message = "Se requiere una contrasenna")
@@ -69,9 +75,14 @@ public class Usuario {
 	@NotEmpty(message = "Se requiere una edad")
 	private Short edad;
 	
-	@JsonProperty("lista_de_deseos")
+	@JsonProperty("fecha_de_creacion")
+	@Column(name = "FechaCreacion")
+	@NotNull
+	private Date fechaCreacion;
+	
+	/*@JsonProperty("lista_de_deseos")
 	@Valid
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id")
-	private List<Producto> listaDeDeseos;
+	private List<Producto> listaDeDeseos;*/
 }
