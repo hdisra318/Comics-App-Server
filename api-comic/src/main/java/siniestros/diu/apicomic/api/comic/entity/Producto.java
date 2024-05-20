@@ -12,7 +12,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Clase que modela un producto
@@ -21,6 +23,8 @@ import lombok.Data;
  */
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "Producto")
 public class Producto {
 	
@@ -40,6 +44,12 @@ public class Producto {
 	@JsonProperty("precio")
 	@Column(name = "Precio")
 	private Float precio;
+	
+	@JsonProperty("imagen")
+	@Valid
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id")
+	private List<Imagen> imagenes;
 	
 	/*@JsonProperty("oferta")
 	private List<String> oferta;//Pensarlo mas a detalle al final
